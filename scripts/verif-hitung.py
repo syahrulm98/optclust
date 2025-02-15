@@ -57,7 +57,7 @@ def elbow_method(data, title, filename):
 
     elbow_point = detect_elbow_point(sse, k_range)
     print(f"Optimal number of clusters (Elbow Method): {elbow_point}")
-    return elbow_point
+    return elbow_point, sse
 
 def silhouette_method(data, title, filename):
     """Determine the optimal number of clusters using the Silhouette Method."""
@@ -78,7 +78,7 @@ def silhouette_method(data, title, filename):
 
     optimal_k = k_range[silhouette_avg.index(max(silhouette_avg))]
     print(f"Optimal number of clusters (Silhouette Method): {optimal_k}")
-    return optimal_k
+    return optimal_k, silhouette_avg
 
 def detect_elbow_point(sse, k_range):
     """Detect the elbow point in the SSE plot."""
@@ -101,13 +101,19 @@ def main():
         if data is not None:
             data = preprocess_data(data)
             title = file_path.split('/')[-1].split('.')[0]
-            elbow_k = elbow_method(data, title, f'hasil/elbow_method_{title}.png')
-            silhouette_k = silhouette_method(data, title, f'hasil/silhouette_method_{title}.png')
+            elbow_k, sse = elbow_method(data, title, f'hasil/elbow_method_{title}.png')
+            silhouette_k, silhouette_scores = silhouette_method(data, title, f'hasil/silhouette_method_{title}.png')
 
             results = {
                 "file_path": file_path,
-                "Elbow Method": elbow_k,
-                "Silhouette Method": silhouette_k
+                "Elbow Method": {
+                    "optimal_k": elbow_k,
+                    "sse": sse
+                },
+                "Silhouette Method": {
+                    "optimal_k": silhouette_k,
+                    "silhouette_scores": silhouette_scores
+                }
             }
 
             output_file = f"hasil/optimal_clusters_{title}.json"

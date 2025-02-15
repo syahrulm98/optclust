@@ -1,1 +1,1 @@
-folder menyimpan hasil perhitungan script python
+folder untuk menyimpan hasil perhitungan pencarian klaster optimal

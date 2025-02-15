@@ -1,6 +1,6 @@
 # OptClust
 
-OptClust adalah proyek yang bertujuan untuk mengoptimalkan jumlah kluster menggunakan metode Elbow dan Silhouette pada data yang diberikan. Proyek ini ditulis dalam Python dan menggunakan pustaka seperti Pandas, Matplotlib, dan Scikit-learn.
+Repositori dengan tujuan menhitung jumlah kluster optimal menggunakan metode Elbow dan Silhouette pada data yang diberikan. Proyek ini ditulis dalam Python dan menggunakan pustaka seperti Pandas, Matplotlib, dan Scikit-learn.
 
 ## Fitur
 

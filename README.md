@@ -40,8 +40,18 @@ Pastikan Anda memiliki Python dan pip terinstal di sistem Anda. Kemudian, ikuti 
     mkdir -p hasil
     ```
 
-3. Jalankan skrip untuk memproses data dan menentukan jumlah kluster optimal
+3. Jalankan skrip untuk memproses data dan menentukan jumlah kluster optimal menggunakan kedua metode
     ```bash
     python scripts/verif-hitung.py
+    ```
+
+4. Jalankan skrip untuk memproses data dan menentukan jumlah kluster optimal menggunakan metode elbow
+    ```bash
+    python scripts/elbow.py
+    ```
+
+3. Jalankan skrip untuk memproses data dan menentukan jumlah kluster optimal menggunakan metode silhouette
+    ```bash
+    python scripts/silhouette.py
     ```
 
